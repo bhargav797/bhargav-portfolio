@@ -20,7 +20,7 @@ const PROFILE = {
   linkedin: "https://www.linkedin.com/in/bhargav-gol-88a314335",
   github: "https://github.com/bhargav797",
   resume: "assets/resume.pdf",
-  internship: "assets/internship.pdf",
+  internship: "assets/Internship.pdf",
   msuLogo: "assets/msu-logo.png",
   projectImage: "assets/clogo.png"
 };
