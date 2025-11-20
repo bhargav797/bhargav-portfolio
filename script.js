@@ -1,8 +1,9 @@
-/* script.js — complete file
-   - Uses your PROFILE data (copied from your message)
+/* script.js — updated & cleaned version
+   - Uses your PROFILE data (copied)
    - Robust mobile menu handling:
      * supports #anchors (smooth scroll + close)
      * supports mailto:, tel:, and external links (close menu and let browser handle)
+     * ignores href="#" placeholders
      * focus trap + Escape to close
      * overlay click closes
    - Wires up contact links and downloads
@@ -21,7 +22,7 @@ const PROFILE = {
   resume: "assets/resume.pdf",
   internship: "assets/internship.pdf",
   msuLogo: "assets/msu-logo.png",
-  projectImage: "assets/project-1.jpg"
+  projectImage: "assets/clogo.png"
 };
 
 function safe(path) {
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "I am an MSC IT student and aspiring frontend developer who enjoys turning complex problems into simple, beautiful, and intuitive user interfaces. I focus on writing clean, maintainable code and continuously improving my skills by working on real-world projects.";
   }
 
-  // --- Experience card injection (example using msuLogo if present) ---
+  // --- Experience card injection (use msuLogo if present) ---
   const experiences = [
     {
       title: "Full Stack Internship",
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       period: "2024",
       description:
         "Worked on building responsive web pages, fixing UI bugs, and collaborating with the team using Git and GitHub.",
-      logo: PROFILE.msuLogo
+      logo: PROFILE.projectImage // <-- use msuLogo for company/education branding
     }
   ];
 
@@ -215,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (menuClose) menuClose.addEventListener("click", closeMenu);
-  overlayEl.addEventListener("click", closeMenu);
+  if (overlayEl) overlayEl.addEventListener("click", closeMenu);
 
   // --- Mobile menu links: support anchors, mailto, tel, external ---
   // Use all links inside mobile menu so we don't depend on specific classes
@@ -223,26 +224,33 @@ document.addEventListener("DOMContentLoaded", () => {
     a.addEventListener("click", ev => {
       const href = a.getAttribute("href");
 
+      // ignore placeholder links like href="#"
+      if (!href || href === "#") {
+        closeMenu();
+        return;
+      }
+
       // If it's an internal anchor -> smooth scroll and close
-      if (href && href.startsWith("#")) {
+      if (href.startsWith("#")) {
         ev.preventDefault();
+        // close after preventing default to avoid cancelling scroll
         closeMenu();
         const target = document.querySelector(href);
         if (target) {
-          // small timeout for nicer UX
+          // small timeout for nicer UX and to avoid reflow cancelling scroll
           setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
         }
         return;
       }
 
       // If mailto: or tel: or external http(s) -> close menu and let browser handle default navigation
-      if (href && (href.startsWith("mailto:") || href.startsWith("tel:") || /^https?:\/\//i.test(href))) {
+      if (href.startsWith("mailto:") || href.startsWith("tel:") || /^https?:\/\//i.test(href)) {
         closeMenu();
         // do not preventDefault, let link open
         return;
       }
 
-      // For links without href or javascript:, just close the menu
+      // For other cases: just close the menu
       closeMenu();
     });
   });
