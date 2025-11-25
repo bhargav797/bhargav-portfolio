@@ -634,3 +634,32 @@ body {
   margin-top: 10px;
   align-self: flex-start;
 }
+
+/* Horizontal Skills Box (like Experience card) */
+.skills-card-horizontal {
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 20px;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+/* Make columns inside stay same as before */
+.skills-card-horizontal .skill-group {
+  flex: 1;
+}
+
+.skills-card-horizontal h3 {
+  margin-top: 0;
+}
+
+/* Mobile responsive: stack vertically */
+@media (max-width: 768px) {
+  .skills-card-horizontal {
+    flex-direction: column;
+  }
+}
+

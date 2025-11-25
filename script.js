@@ -12,7 +12,7 @@
 
 const PROFILE = {
   name: "Bhargav Gol",
-  role: "MSC IT Student / Frontend Developer",
+  role: "MSC IT Student / Full Stack Developer",
   years: "5+ months",
   projectsCount: "6+",
   email: "bhargav280421@gmail.com",
