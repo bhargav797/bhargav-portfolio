@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "predeploy": "echo Deploying portfolio...",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhargav797/bhargav-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bhargav797/bhargav-portfolio/issues"
+  },
+  "homepage": "https://github.com/bhargav797/bhargav-portfolio#readme",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
