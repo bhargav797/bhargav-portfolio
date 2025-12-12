@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bhargav Gol | Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Bhargav Gol — MSC IT student. Projects, skills, education and contact." />
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Official portfolio of Bhargav Gol. Web Developer, Full Stack Developer, Python and Java projects.">
+  <meta name="keywords" content="Bhargav Gol, Bhargav Portfolio, Web Developer India, Full Stack Developer, Java Developer, Python Developer">
+  <meta name="author" content="Bhargav Gol">
+
+  <meta property="og:title" content="Bhargav Gol | Portfolio">
+  <meta property="og:description" content="Portfolio website of Bhargav Gol showcasing web development projects.">
+  <meta property="og:url" content="https://bhargav797.github.io/bhargav-portfolio/">
+  <meta property="og:type" content="website">
+  <meta name="google-site-verification" content="wDTyisE0N0yfMVTsdxLPCCle-Pkdu1fL7z-mou-QSv4" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/180.png">
+<link rel="icon" href="assets/logo.png" />
+</head>
+<body>
+  <header id="site-header" class="header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/32.png" alt="Logo" class="brand-logo">
+        <div class="brand-name" id="brand-name">Bhargav Gol</div>
+      </div>
+
+      <nav id="main-nav" class="nav-desktop" aria-label="Primary navigation">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <!-- Mobile toggle -->
+      <button id="menu-toggle" class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+        <span class="hamb" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Off-canvas mobile menu moved outside header -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile menu">
+    <div class="mobile-panel" role="document">
+      <button id="menu-close" class="menu-close" aria-label="Close menu">&times;</button>
+
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a class="mobile-link" href="#about">About</a>
+        <a class="mobile-link" href="#education">Education</a>
+        <a class="mobile-link" href="#experience">Experience</a>
+        <a class="mobile-link" href="#skills">Skills</a>
+        <a class="mobile-link" href="#projects">Projects</a>
+        <a class="mobile-link" href="#contact">Contact</a>
+      </nav>
+
+      <div class="mobile-socials">
+        <a class="btn small" id="mobile-email" href="mailto:bhargav280421@gmail.com">Email</a>
+        <a class="btn small" id="mobile-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn small" id="mobile-github" href="#" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" class="container" role="main">
+    <!-- Hero -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <div class="kicker">Portfolio</div>
+        <h1 id="hero-heading">
+          Hi, I'm <span id="profile-name" class="gradient-text">Bhargav Gol</span><br/>
+          <span id="role" class="muted">MSC IT Student / /Full Stack Developer</span>
+        </h1>
+        <p id="summary" class="muted">
+          I build accessible, performant web apps with a focus on clean interfaces and user experience.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn btn-gradient" id="download-resume" href="assets/resume.pdf" download>Download Resume</a>
+        </div>
+
+        <dl class="stats" aria-label="Quick stats">
+          <div class="stat">
+            <dt>Experience</dt>
+            <dd id="years">6+ months</dd>
+          </div>
+          <div class="stat">
+            <dt>Projects</dt>
+            <dd id="projects-count">10+ projects</dd>
+          </div>
+        </dl>
+      </div>
+
+      <aside class="hero-card" aria-label="Profile card">
+        <div class="hero-card-inner">
+          <div class="hero-avatar">
+          <img src="assets/180.png" alt="Profile Logo" class="hero-logo">
+        </div>
+          <h2 class="hero-name" id="hero-name">Bhargav Gol</h2>
+          <p class="hero-role">MSC IT Student / Full-Stack Developer</p>
+          <p class="hero-location">Vadodara, Gujarat, India</p>
+
+          <div class="hero-tags" aria-label="Key strengths">
+            <span class="tag">Full-Stack</span>
+            <span class="tag">React</span>
+            <span class="tag">Python</span>
+            <span class="tag">Clean UI</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <header class="section-header">
+        <h2 id="about-heading">About</h2>
+        <p class="muted">A quick overview of who I am and how I work.</p>
+      </header>
+      <div class="section-body">
+        <p id="about-text">
+          I am an MSc IT student and aspiring Full-Stack Developer who enjoys building scalable, user-friendly, and efficient applications. I love turning complex problems into clean, well-structured solutions—whether on the frontend or backend. I focus on writing maintainable, high-quality code and continuously expanding my skill set by working on real-world projects, exploring new technologies, and refining my development workflow.
+        </p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section" aria-labelledby="education-heading">
+      <header class="section-header">
+        <h2 id="education-heading">Education</h2>
+        <p class="muted">My academic background.</p>
+      </header>
+      <div class="cards-grid">
+        <article class="card">
+          <div class="edu-header">
+            <img src="assets/msu-logo.png" alt="MSU Logo" class="edu-logo">
+            <div>
+              <h3>Master of Science in Information Technology</h3>
+              <p class="muted">The Maharaja Sayajirao University of Baroda</p>
+            </div>
+          </div>
+          <p class="muted small">2024 – Present</p>
+          <p class="small">Focusing on advanced programming, software development, and modern web technologies.</p>
+        </article>
+
+        <article class="card">
+          <div class="edu-header">
+            <img src="assets/msu-logo.png" alt="MSU Logo" class="edu-logo">
+            <div>
+          <h3>Bachelor of Computer Applications</h3>
+          <p class="muted">The Maharaja Sayajirao University of Baroda</p>
+          </div>
+          </div>
+          <p class="muted small">2021 – 2024</p>
+          <p class="small">Learnt the fundamentals of programming, databases, and software engineering.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section" aria-labelledby="experience-heading">
+      <header class="section-header">
+        <h2 id="experience-heading">Experience</h2>
+        <p class="muted">Hands-on experience and internships.</p>
+      </header>
+      <div id="experience-list" class="cards-grid">
+        <!-- Experience items injected by script.js -->
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <!-- Skills (replaced to use glassy card like Experience) -->
+<section id="skills" class="section" aria-labelledby="skills-heading">
+  <header class="section-header">
+    <h2 id="skills-heading">Skills</h2>
+    <p class="muted">Technologies and tools I work with.</p>
+  </header>
+<div class="skills-card-horizontal">
+  <div class="skill-group">
+    <h3>Frontend</h3>
+    <ul>
+      <li>HTML5 / CSS3</li>
+      <li>JavaScript</li>
+      <li>React (Basics)</li>
+      <li>Responsive Design</li>
+    </ul>
+  </div>
+
+  <div class="skill-group">
+    <h3>Backend &amp; Database</h3>
+    <ul>
+      <li>Python</li>
+      <li>MongoDb Atlas</li>
+      <li>SQL</li>
+    </ul>
+  </div>
+
+  <div class="skill-group">
+    <h3>Tools &amp; Practices</h3>
+    <ul>
+      <li>Git &amp; GitHub</li>
+      <li>VS Code / IntelliJ IDEA</li>
+      <li>Clean, readable code</li>
+    </ul>
+  </div>
+</div>
+
+
+    <!-- Projects -->
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <header class="section-header">
+        <h2 id="projects-heading">Projects</h2>
+        <p class="muted">Some of the work I&apos;m most proud of.</p>
+      </header>
+
+<div id="projectsGrid" class="projects-grid">
+  <article class="project-card">
+    <div class="project-body">
+      <h3>Advanced CSS Calculator </h3>
+      <p class="muted small">
+        Precision + keyboard support + smooth
+      </p>
+
+      <ul class="project-tags">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+
+      <!-- 🔗 View Project button (put your link in href) -->
+      <a
+        class="btn btn-primary project-view"
+        href="https://bhargav797.github.io/calculator/"
+        target="_blank"
+        rel="noopener"
+      >
+        View Project
+      </a>
+    </div>
+    <div class="project-body">
+      <h3>Portfolio Website</h3>
+      <p class="muted small">
+        Responsive portfolio website to showcase my projects, skills, and experience.
+      </p>
+
+      <ul class="project-tags">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+
+      <!-- 🔗 View Project button (put your link in href) -->
+      <a
+        class="btn btn-primary project-view"
+        href="https://bhargav797.github.io/bhargav-portfolio/"
+        target="_blank"
+        rel="noopener"
+      >
+        View Project
+      </a>
+    </div>
+    <div class="project-body">
+      <h3>Weather (Python)</h3>
+      <p class="muted small">
+The app uses a fast React.js frontend and a secure Python backend protected by an API key.
+
+      </p>
+
+      <ul class="project-tags">
+        <li>React Js</li>
+        <li>Python</li>
+        <li>Render & Github</li>
+      </ul>
+
+      <!-- 🔗 View Project button (put your link in href) -->
+      <a
+        class="btn btn-primary project-view"
+        href="https://bhargav797.github.io/Weather-Frontend-python/"
+        target="_blank"
+        rel="noopener"
+      >
+        View Project
+      </a>
+    </div>
+    <div class="project-body">
+      <h3>Weather (React)</h3>
+      <p class="muted small">
+The app uses a fast React.js frontend and secure backend protected by an API key.
+
+      </p>
+
+      <ul class="project-tags">
+        <li>React Js</li>
+        <li>Render & Github</li>
+      </ul>
+
+      <!-- 🔗 View Project button (put your link in href) -->
+      <a
+        class="btn btn-primary project-view"
+        href="https://bhargav797.github.io/react-weather-app/"
+        target="_blank"
+        rel="noopener"
+      >
+        View Project
+      </a>
+    </div>
+  </article>
+</div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <header class="section-header">
+        <h2 id="contact-heading">Contact</h2>
+        <p class="muted">
+          Interested in working together or offering an internship? Let&apos;s talk.
+        </p>
+      </header>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Get in touch</h3>
+          <p class="muted small">
+            You can reach me quickly via email or WhatsApp. I&apos;m open to internship and
+            entry-level frontend opportunities.
+          </p>
+          <div class="contact-actions">
+            <a id="email-link" class="btn btn-primary" href="mailto:bhargav280421@gmail.com">
+              Email Me
+            </a>
+            <a id="wa-link" class="btn" href="#" target="_blank" rel="noopener">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Profiles &amp; Resume</h3>
+          <ul class="contact-links">
+            <li><a id="github-link" href="#" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a id="linkedin-link" href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a id="internship-letter" href="assets/" download>Download Internship Letter</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      © <span id="year"></span> Bhargav Gol. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

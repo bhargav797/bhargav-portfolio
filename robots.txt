@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap:https://bhargav797.github.io/bhargav-portfolio/sitemap.xml
