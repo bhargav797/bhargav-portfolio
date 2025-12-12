@@ -219,13 +219,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (overlayEl) overlayEl.addEventListener("click", closeMenu);
 
   // --- Mobile menu links: support anchors, mailto, tel, external ---
-  // Use all links inside mobile menu so we don't depend on specific classes
-  mobileMenu.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", ev => {
-      const href = a.getAttribute("href");
+  // REPLACED fragile per-link handlers with a single delegated handler on panelEl
+  // (This preserves the previous behavior but is robust to overlay/z-index issues.)
+  if (panelEl) {
+    panelEl.addEventListener("click", ev => {
+      const anchor = ev.target.closest("a");
+      if (!anchor || !panelEl.contains(anchor)) return;
+
+      const href = anchor.getAttribute("href") || "";
 
       // ignore placeholder links like href="#"
       if (!href || href === "#") {
+        ev.preventDefault();
         closeMenu();
         return;
       }
@@ -233,12 +238,16 @@ document.addEventListener("DOMContentLoaded", () => {
       // If it's an internal anchor -> smooth scroll and close
       if (href.startsWith("#")) {
         ev.preventDefault();
-        // close after preventing default to avoid cancelling scroll
         closeMenu();
         const target = document.querySelector(href);
         if (target) {
-          // small timeout for nicer UX and to avoid reflow cancelling scroll
-          setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+          // use site-header height if present so anchor isn't hidden behind sticky header
+          const siteHeader = document.getElementById("site-header");
+          const headerHeight = siteHeader ? siteHeader.getBoundingClientRect().height : 0;
+          setTimeout(() => {
+            const top = window.scrollY + target.getBoundingClientRect().top - (headerHeight + 8);
+            window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+          }, 80);
         }
         return;
       }
@@ -253,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // For other cases: just close the menu
       closeMenu();
     });
-  });
+  }
 
   // --- Desktop nav anchors: smooth scroll ---
   document.querySelectorAll(".nav-link").forEach(a => {

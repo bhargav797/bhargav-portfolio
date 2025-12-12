@@ -37,6 +37,11 @@ body {
   min-height: 100vh;
 }
 
+/* helper to prevent body scroll when mobile menu open */
+.no-scroll {
+  overflow: hidden;
+}
+
 /* Layout helpers */
 .container {
   width: min(1120px, 100% - 32px);
@@ -80,20 +85,12 @@ body {
   gap: 10px;
 }
 
-/* .brand-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  background: radial-gradient(circle, #22c55e 0%, #16a34a 40%, #166534 100%);
-  box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
-} */
- .brand-logo {
+.brand-logo {
   width: 32px;
   height: 32px;
   object-fit: contain;
   border-radius: 8px;
 }
-
 
 .brand-name {
   font-weight: 600;
@@ -184,20 +181,28 @@ body {
   inset: 0;
   z-index: 999;
   display: none;
-  background: rgba(0, 0, 0, 0.45);
+  background: transparent; /* overlay is inside, keep this transparent */
 }
 
+/* visible state */
 .mobile-menu[aria-hidden="false"] {
   display: block;
 }
 
-/* overlay div created in JS so click outside panel closes menu */
+/* overlay div created in JS so click outside panel closes menu.
+   overlay must be below the panel so clicks on links register */
 .mobile-overlay {
   position: absolute;
   inset: 0;
+  z-index: 10; /* below panel */
+  background: rgba(0, 0, 0, 0.45);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 86%;
   max-width: 360px;
   height: 100%;
@@ -207,6 +212,8 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  z-index: 20; /* above overlay */
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu-close {
@@ -262,8 +269,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 20%; /* make it round – remove if you want square */
-  box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.15); /* same style as old */
+  border-radius: 20%;
+  box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.15);
 }
 
 .hero {
@@ -686,4 +693,3 @@ body {
     flex-direction: column;
   }
 }
-
