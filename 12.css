@@ -363,7 +363,7 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, #0ea5e9, #22c55e);
   border-color: transparent;
-  box-shadow: 0px 18px 35px rgba(3, 15, 20, 0.4);
+  box-shadow: 0 18px 35px rgba(56, 189, 248, 0.4);
 }
 
 .btn-primary:hover,
